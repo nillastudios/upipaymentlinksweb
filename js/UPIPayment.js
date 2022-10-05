@@ -48,7 +48,8 @@ window.addEventListener('load', function() {
     }
 
     // Get parameters in case platform is android or iOS
-    if (window.location.search.indexOf('pa') > -1) {
+    if (window.location.search.indexOf('pa') > -1 && window.location.search.indexOf('pn') > -1
+    && window.location.search.indexOf('am') > -1 && window.location.search.indexOf('tr') > -1) {
 
         // load UPI details
         const queryString = window.location.search;
@@ -59,7 +60,11 @@ window.addEventListener('load', function() {
         // const tn = urlParams.get('tn');
         const ordid = urlParams.get('tr');
 
+        // Set upi details for use
         upiDetails = new UPIDetails(pa, pn, am, ordid, ordid);
+
+        // Set the payment note
+        this.document.getElementById('payNote').innerHTML = pn + " has requested ₹" + am;
 
         // Set pay button href
         this.document.getElementById('pay').href = GetUPILink();
