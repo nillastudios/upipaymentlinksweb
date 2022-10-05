@@ -90,7 +90,7 @@ function GetUPILink()
                     + "&tn=" + upiDetails.transactionNote
                     + "&tr=" + upiDetails.orderID;
 
-    if(platform == 'Android')
+    if(platform == 'Android' || platform == 'iOS') // need to remove iOS
     {
         upiLink = "upi://" + queryLink;
         return upiLink;
@@ -99,8 +99,7 @@ function GetUPILink()
     if(platform == 'iOS')
     {
         let selectedApp = document.getElementById('payApps').value;
-        urlPrefix = selectedApp + '://';
-        upiLink = urlPrefix + queryLink;
+        upiLink = selectedApp + queryLink;
         return upiLink;
     }
 }
