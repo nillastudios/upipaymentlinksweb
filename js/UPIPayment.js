@@ -67,8 +67,7 @@ window.addEventListener('load', function() {
         this.document.getElementById('payNote').innerHTML = pn + " has requested ₹" + am;
 
         // Set pay button href
-        this.alert(GetUPILink());
-        this.document.getElementById('pay').href = GetUPILink();
+        this.document.getElementById('pay').setAttribute('href', GetUPILink());
 
     } else {
         this.document.getElementById('payNote').innerHTML = "This link is invalid!";
