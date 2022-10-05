@@ -75,6 +75,10 @@ window.addEventListener('load', function() {
     }
 });
 
+this.document.getElementById('pay').addEventListener('click', function() {
+    window.location.replace(GetUPILink());
+});
+
 // Function to pay by opening respective app on platforms
 function GetUPILink() 
 {
