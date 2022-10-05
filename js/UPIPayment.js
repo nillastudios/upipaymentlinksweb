@@ -60,6 +60,8 @@ window.addEventListener('load', function() {
         // const tn = urlParams.get('tn');
         const ordid = urlParams.get('tr');
 
+        this.alert(pn);
+
         // Set upi details for use
         upiDetails = new UPIDetails(pa, pn, am, ordid, ordid);
 
